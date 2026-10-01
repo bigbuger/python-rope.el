@@ -96,4 +96,4 @@ or just call each `rope-*' command in a python buffer.
   + If not found, just use the default-directory
 
 *** Relation project
-- https://github.com/python-mode/python-mode Yes, we can learn how they use rope.
+- [[https://github.com/python-mode/python-mode][vim python-mode]] Yes, we can learn how they use rope.
