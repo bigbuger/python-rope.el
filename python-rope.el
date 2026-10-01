@@ -1,6 +1,24 @@
 ;;; python-rope.el --- python rope client  -*- lexical-binding: t; -*-
 
+;; Copyright (C) 2026  bigbuger
+
+;; This file is NOT part of GNU Emacs.
+
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 ;;; Commentary:
+;;;   Needs the python rope package installed.
 ;; 
 
 ;;; Code:
@@ -10,7 +28,7 @@
   (concat (file-name-directory (or load-file-name buffer-file-name)) "rope_cli.py"))
 
 (defcustom rope-python-executable
-  (or (executable-find "python") (executable-find "python3"))
+  (or (executable-find "python3") (executable-find "python"))
   "Python executable for rope.When using venv, you maybe want to change this."
   :group 'python-rope)
 
@@ -52,7 +70,8 @@ Otherwise just return `default-directory'."
 		       (if (eq 0 exit-code)
 			   (progn
 			     (revert-buffer-with-fine-grain t t)
-			     (vc-state-refresh buffer-file (vc-backend buffer-file))
+			     (when vc-mode
+			       (vc-state-refresh buffer-file (vc-backend buffer-file)))
 			     (when (featurep 'diff-hl)
 			       (diff-hl-update))
 			     (message "Rope action %s success." action))
