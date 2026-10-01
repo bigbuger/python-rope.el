@@ -94,3 +94,6 @@ or just call each `rope-*' command in a python buffer.
   + First step: use projectile if it installed
   + And then: use build project
   + If not found, just use the default-directory
+
+*** Relation project
+- https://github.com/python-mode/python-mode Yes, we can learn how they use rope.
