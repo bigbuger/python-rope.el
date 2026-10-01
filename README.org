@@ -4,6 +4,7 @@
 This package provider some refactoring code command.
 
 Demo:
+
 [[file:images/python-rope.gif]]
 
 
@@ -11,6 +12,7 @@ Demo:
 Now a day lsp can do code refactor. But some python lsp not support refactoring.
 If you using pyrefly, you not need this package, it provide refactor features.
 For me, I using ty as lsp and ruff as lint right now. But ty not support refactoring (right now is 2026-10-01).
+
 
 Hum, Wait for ty to support these featurs.
 
@@ -80,5 +82,8 @@ or just call each `rope-*' command in a python buffer.
   
   Yep, may be you has activated venv, or the python-rope is load under some other environment.
   So you should may sure that is the right python witch has the rope lib.
+
   +hum, python package management, what a terrible thing+
+
+  
   +and I donn't know why rope not as a cli bin+
