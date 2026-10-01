@@ -87,3 +87,10 @@ or just call each `rope-*' command in a python buffer.
 
   
   +and I donn't know why rope not as a cli bin+
+
+*** rope-project-function
+  Function to find the project root.
+  Default value:
+  + First step: use projectile if it installed
+  + And then: use build project
+  + If not found, just use the default-directory
